@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+  # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
+      - uses: stCarolas/setup-maven@v4.2
+      
       #Execute test
        # - name: Clean output folder
        # run: mvn clean
