@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       
       #Execute test
-      -name: Clean output folder
-      run: mvn clean
+       # - name: Clean output folder
+       # run: mvn clean
       
 
       # Runs a single command using the runners shell
