@@ -30,5 +30,12 @@
 </dependency>
   
   </dependencies>
+  <pluggins> 
+    <pluggin>
+    <suiteXmlFiles>
+    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+      </suiteXmlFiles>
+    </pluggin>
   
+  </pluggins>
 </project>
