@@ -22,20 +22,22 @@
     <scope>test</scope>
     </dependency>
   
-  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>3.141.59</version>
 </dependency>
-  
   </dependencies>
+     
+     <build>
   <plugins> 
     <plugin>
-    <suiteXmlFiles>
-    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-      </suiteXmlFiles>
+      <suiteXmlFiles>
+       <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+        </suiteXmlFiles>
     </plugin>
   
-  </plugins>
+ </plugins>
+     </build>
+  
 </project>
