@@ -42,4 +42,5 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: mvn test --file testng.xml
+        #run: mvn test --file testng.xml
+        run: mvn test -suiteXmlFile=testng.xml
