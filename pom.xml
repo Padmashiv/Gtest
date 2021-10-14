@@ -11,10 +11,23 @@
 </dependency>
   <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 <dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M4</version>
+  <build>
+  <plugins> 
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0-M4</version>
+  
+    <configuration>
+        <suiteXmlFiles>
+         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+       </plugin>
+    </plugins>
+    
 </dependency>
+     
   <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
@@ -28,16 +41,6 @@
     <version>3.141.59</version>
 </dependency>
   </dependencies>
-     
-     <build>
-  <plugins> 
-    <plugin>
-      <suiteXmlFiles>
-       <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-        </suiteXmlFiles>
-    </plugin>
-  
- </plugins>
      </build>
   
 </project>
