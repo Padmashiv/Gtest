@@ -19,22 +19,24 @@ jobs:
  build:
     # The type of runner that the job will run on
     runs-on: [windows-latest]
-     #- uses: actions/checkout@v2
-     #- name: Set up JDK 1.8
-     # uses: actions/setup-java@v1
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+          # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      name: Set up JDK 1.8
+     # uses: actions/setup-java@v1
+  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
       
   # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
-      - uses: stCarolas/setup-maven@v4.2
+    - uses: stCarolas/setup-maven@v4.2
       
-      - uses: nanasess/setup-chromedriver@master
-      - run: chromedriver --url-base=/wd/hub &
+    - uses: nanasess/setup-chromedriver@master
+    - run: chromedriver --url-base=/wd/hub &
       
-      -  uses: NishkarshRaj/Maven_Actions@0.1
+    - uses: sualeh/prepare-maven-build@v1.2.0
+          with:
+    # Java version
+          java-version: # default is 8
         #Execute test
        # - name: Clean output folder
        # run: mvn clean
