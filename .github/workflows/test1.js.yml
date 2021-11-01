@@ -19,6 +19,9 @@ jobs:
  build:
     # The type of runner that the job will run on
     runs-on: [windows-latest]
+     #- uses: actions/checkout@v2
+     #- name: Set up JDK 1.8
+     # uses: actions/setup-java@v1
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
