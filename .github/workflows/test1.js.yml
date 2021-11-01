@@ -34,7 +34,8 @@ jobs:
       - uses: nanasess/setup-chromedriver@master
       - run: chromedriver --url-base=/wd/hub &
       
-      #Execute test
+      -  uses: NishkarshRaj/Maven_Actions@0.1
+        #Execute test
        # - name: Clean output folder
        # run: mvn clean
 
