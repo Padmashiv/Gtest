@@ -34,24 +34,11 @@ jobs:
       #Execute test
        # - name: Clean output folder
        # run: mvn clean
-      - - name: Surefire Report
+      - name: Surefire Report
   # You may pin to the exact commit or the version.
   # uses: ScaCap/action-surefire-report@ad808943e6bfbd2e6acba7c53fdb5c89534da533
       - uses: ScaCap/action-surefire-report@v1.0.5
-         github_token: 
-    # surefire/failsafe/junit compatible xml report paths in glob format
-    report_paths: # optional, default is **/surefire-reports/TEST-*.xml, **/failsafe-reports/TEST-*.xml
-    # check name for test reports
-    check_name: # optional, default is Test Report
-    # commit sha to update the status
-    commit: # optional
-    # fail run if there were test failures
-    fail_on_test_failures: # optional, default is false
-    # fail run if there were no test results found
-    fail_if_no_tests: # optional, default is true
-      
-      
-      
+         
       
       
       
