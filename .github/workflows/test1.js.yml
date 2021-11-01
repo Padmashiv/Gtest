@@ -16,20 +16,31 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+ build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: [windows-latest]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+  # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
+      - uses: stCarolas/setup-maven@v4.2
+      
+      - uses: nanasess/setup-chromedriver@master
+      - run: chromedriver --url-base=/wd/hub &
+      
+      #Execute test
+       # - name: Clean output folder
+       # run: mvn clean
 
-      # Runs a single command using the runners shell
+         # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: mvn test -suiteXmlFile=testng.xml
-     
+        #run: mvn test --file testng.xml
+       # run: mvn compile -DsuiteXmlFile=testng.xml
+        run: mvn -B package --file pom.xml test
