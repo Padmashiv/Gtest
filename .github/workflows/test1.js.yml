@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Java CI with Maven
 
 # Controls when the workflow will run
 on:
@@ -41,6 +41,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        #run: mvn test --file testng.xml
+      #  #run: mvn test --file testng.xml
        # run: mvn compile -DsuiteXmlFile=testng.xml
         run: mvn -B package --file pom.xml test
