@@ -31,7 +31,7 @@ jobs:
       - name: Build with Maven
         run: |
          #cd java/src/main/test1
-         cd java/src/main/Gtest
+         cd java/src/test/Gtest
          #Gtest/src/test/java/
          
          mvn clean test
