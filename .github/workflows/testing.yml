@@ -30,7 +30,10 @@ jobs:
          java-version: 1.8
       - name: Build with Maven
         run: |
-         cd java/src/main/test1
+         #cd java/src/main/test1
+         cd java/src/main/Gtest
+         #Gtest/src/test/java/
+         
          mvn clean test
       - name: Test Reporter
         uses: dorny/test-reporter@v1.4.3
