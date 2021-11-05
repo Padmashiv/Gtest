@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Selenium Java CI
 
 # Controls when the workflow will run
 on:
@@ -26,14 +26,17 @@ jobs:
       - uses: actions/checkout@v2
       
   # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
-      - uses: stCarolas/setup-maven@v4.2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4
+        with:
+         maven-version: 3.5.4
       
       - uses: nanasess/setup-chromedriver@master
       - run: chromedriver --url-base=/wd/hub &
       
       #Execute test
-       # - name: Clean output folder
-       # run: mvn clean
+      - name: Build with MVN
+        run: mvn clean test --file rdr-service/pom.xml
       
 
       # Runs a single command using the runners shell
@@ -45,3 +48,13 @@ jobs:
         run: mvn test --file testng.xml
        # run: mvn compile -DsuiteXmlFile=testng.xml
     #    run: mvn -B package --file pom.xml test
+      - name: Test Reporter
+  # You may pin to the exact commit or the version.
+  # uses: dorny/test-reporter@0d00bb14cb0cc2c9b8985df6e81dd333188224e1
+        uses: dorny/test-reporter@v1.5.0
+        with:
+    # Name or regex of artifact containing test results
+    # Name of the check run
+         name: Test Run
+         path: "**/surefire-reports/TEST-*.xml"
+         reporter: java-junit 
