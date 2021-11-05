@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Selenium Java CI
+name: Java CI with Maven
 
 # Controls when the workflow will run
 on:
@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: [ubentu-latest]
+    runs-on: [windows-latest]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,10 +28,7 @@ jobs:
         uses: actions/setup-java@v1 # Setup JAVA
         with:
          java-version: 1.8
-      - name: Install Google Chrome # Using shell script to install Google Chrome
-        run: |
-         chmod +x ./scripts/InstallChrome.sh
-         ./scripts/InstallChrome.sh
+      
      
   # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
       - name: Set up Maven
