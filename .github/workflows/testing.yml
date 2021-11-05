@@ -25,6 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      ###
+      - uses: actions/checkout@v2
+      - name: Set up JDK 15
+        uses: actions/setup-java@v2
+        with:
+           java-version: '15'
+           distribution: 'adopt'
+      
   # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4
@@ -36,25 +44,26 @@ jobs:
       
       #Execute test
       - name: Build with MVN
-        run: mvn clean test --file rdr-service/pom.xml
+     #   run: mvn clean test --file rdr-service/pom.xml
       
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
+       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: mvn test --file testng.xml
        # run: mvn compile -DsuiteXmlFile=testng.xml
-    #    run: mvn -B package --file pom.xml test
+       # run: mvn -B package --file pom.xml test
+    
       - name: Test Reporter
-  # You may pin to the exact commit or the version.
-  # uses: dorny/test-reporter@0d00bb14cb0cc2c9b8985df6e81dd333188224e1
+      # You may pin to the exact commit or the version.
+      # uses: dorny/test-reporter@0d00bb14cb0cc2c9b8985df6e81dd333188224e1
         uses: dorny/test-reporter@v1.5.0
         with:
-    # Name or regex of artifact containing test results
-    # Name of the check run
+      # Name or regex of artifact containing test results
+      # Name of the check run
          name: Test Run
          path: "**/surefire-reports/TEST-*.xml"
          reporter: java-junit 
