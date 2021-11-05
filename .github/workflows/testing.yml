@@ -58,8 +58,6 @@ jobs:
 
        # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-       #run: mvn test --file testng.xml
-       # run: mvn compile -DsuiteXmlFile=testng.xml
         run: mvn -B package --file pom.xml test
     
      #Execute test
@@ -69,7 +67,7 @@ jobs:
     #  - name: Test Reporter
       # You may pin to the exact commit or the version.
       # uses: dorny/test-reporter@0d00bb14cb0cc2c9b8985df6e81dd333188224e1
-        uses: dorny/test-reporter@v1.5.0
+      #  uses: dorny/test-reporter@v1.5.0
      #   with:
       # Name or regex of artifact containing test results
       # Name of the check run
