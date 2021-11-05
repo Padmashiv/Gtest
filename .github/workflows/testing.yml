@@ -48,11 +48,11 @@ jobs:
 
        # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: mvn test --file testng.xml
+       #run: mvn test --file testng.xml
        # run: mvn compile -DsuiteXmlFile=testng.xml
-       # run: mvn -B package --file pom.xml test
+        run: mvn -B package --file pom.xml test
     
-    #Execute test
+     #Execute test
       - name: Build with MVN
         run: mvn clean test --file rdr-service/pom.xml
         
