@@ -27,11 +27,8 @@ jobs:
       
       ###
       - uses: actions/checkout@v2
-      - name: Set up JDK 15
-        uses: actions/setup-java@v2
-        with:
-           java-version: '15'
-           distribution: 'adopt'
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.3.1
       
   # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
       - name: Set up Maven
