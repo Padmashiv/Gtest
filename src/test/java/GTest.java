@@ -17,7 +17,8 @@ public class GTest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
+		
 		
 		driver.findElement(By.name("q")).sendKeys("Capgemini");
 		Thread.sleep(2000);
@@ -25,8 +26,15 @@ public class GTest {
 		driver.findElement(By.xpath("//a[@data-hveid='CAIQBA']")).click();;
 		System.out.println("****************" + "Current Url : " + "********************" );
 		System.out.println(driver.getCurrentUrl());
+		driver.navigate().back();
+		
+		System.out.println("****************" + "Current Url : " + "********************" );
+		System.out.println(driver.getCurrentUrl());
 	
-	
+		driver.navigate().back();
+		
+		System.out.println("****************" + "Current Url : " + "********************" );
+		System.out.println(driver.getCurrentUrl());
 		Thread.sleep(2000);
 		driver.close();
 	}
