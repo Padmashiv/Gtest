@@ -28,6 +28,12 @@ jobs:
         uses: actions/setup-java@v1 # Setup JAVA
         with:
          java-version: 1.8
+
+  # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4
+        with:
+         maven-version: 3.5.4
       - name: Build with Maven
         run: |
          mvn clean test
@@ -38,11 +44,7 @@ jobs:
          path: "**/surefire-reports/TEST-*.xml"
          reporter: java-junit
      
-  # uses: stCarolas/setup-maven@7060d72b50fbf2389a16d6f66a9c7d4d9ece5d36
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4
-        with:
-         maven-version: 3.5.4
+
          
       
       - uses: nanasess/setup-chromedriver@master
