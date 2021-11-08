@@ -25,9 +25,7 @@ public class GTest {
 		driver.findElement(By.xpath("//a[@data-hveid='CAIQBA']")).click();;
 		System.out.println("****************" + "Current Url : " + "********************" );
 		System.out.println(driver.getCurrentUrl());
-		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("C:\\Users\\ppuliban\\OneDrive - Capgemini\\Desktop\\Screenshots"));
-		
+	
 	
 		Thread.sleep(2000);
 		driver.close();
