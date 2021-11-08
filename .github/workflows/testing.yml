@@ -36,13 +36,13 @@ jobs:
          maven-version: 3.5.4
       - name: Build with Maven
         run: |
-         mvn clean test
+         mvn test
       - name: Test Reporter
         uses: dorny/test-reporter@v1.4.3
         with:
-         name: report     #Test Run
-         path: "**/surefire-reports/TEST-*.xml"
-         reporter: java-junit
+     //    name: report     #Test Run
+     //    path: "**/surefire-reports/TEST-*.xml"
+      //   reporter: java-junit
      
 
          
