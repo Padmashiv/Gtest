@@ -37,6 +37,13 @@ jobs:
       - name: Build with Maven
         run: |
          mvn test
+      - name: Test Reporter
+        uses: dorny/test-reporter@v1.4.3
+        with:
+         name: report
+         path: "**/surefire-reports/TEST-*.xml"
+         reporter: java-junit
+      
       
       - uses: nanasess/setup-chromedriver@master
       - run: chromedriver --url-base=/wd/hub &     
