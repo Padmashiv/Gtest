@@ -34,13 +34,12 @@ jobs:
         uses: stCarolas/setup-maven@v4
         with:
          maven-version: 3.5.4
+      - uses: nanasess/setup-chromedriver@master
       - name: Build with Maven
         run: |
          mvn test
-      
-      
-      - uses: nanasess/setup-chromedriver@master
-      - run: chromedriver --url-base=/wd/hub &     
+           
+      # - run: chromedriver --url-base=/wd/hub &     
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
