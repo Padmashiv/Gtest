@@ -26,15 +26,7 @@ public class GTest {
 		driver.findElement(By.xpath("//a[@data-hveid='CAIQBA']")).click();;
 		System.out.println("****************" + "Current Url : " + "********************" );
 		System.out.println(driver.getCurrentUrl());
-		driver.navigate().back();
 		
-		System.out.println("****************" + "Current Url : " + "********************" );
-		System.out.println(driver.getCurrentUrl());
-	
-		driver.navigate().back();
-		
-		System.out.println("****************" + "Current Url : " + "********************" );
-		System.out.println(driver.getCurrentUrl());
 		Thread.sleep(2000);
 		driver.close();
 	}
