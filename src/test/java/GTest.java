@@ -23,7 +23,8 @@ public class GTest {
 		driver.findElement(By.name("q")).sendKeys("Capgemini");
 		Thread.sleep(2000);
 		driver.findElement(By.name("btnK")).click();
-		driver.findElement(By.xpath("//a[@data-hveid='CAIQBA']")).click();;
+		Thread.sleep(2000);
+	//	driver.findElement(By.xpath("//a[@data-hveid='CAIQBA']")).click();;
 		System.out.println("****************" + "Current Url : " + "********************" );
 		System.out.println(driver.getCurrentUrl());
 		
