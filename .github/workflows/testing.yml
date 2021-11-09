@@ -49,8 +49,5 @@ jobs:
       - name: Run a multi-line script
         run: mvn -B package --file pom.xml test
     
-     #Execute test
-    #  - name: Build with MVN
-    #    run: mvn clean test --file rdr-service/pom.xml
-        
+         
    
