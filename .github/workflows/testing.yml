@@ -50,7 +50,7 @@ jobs:
         run: mvn -B package --file pom.xml test
         
       - name: Test Reporter
-        uses: dorny/test-reporter@v1.4.3
+        #uses: dorny/test-reporter@v1.4.3
         with:
          name: report
          path: "**/surefire-reports/TEST-*.xml"
